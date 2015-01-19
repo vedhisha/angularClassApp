@@ -1,0 +1,26 @@
+<section name="applicationform">
+<div class="header"></div>
+<div class="body">
+<form name="sampleForm" method="post" novadilate>
+
+<label for="fullname">fullName</label>
+<input type="text" id="fullName" name="fullName" class="form-control" ng-model="user.fullName" ng-change="submitForm(user)"/>
+
+<label for="email">Email</label>
+<input type="email" id="email" name="Email" class="form-control" ng-model="user.email"/>
+<p style="color:red" ng-show="sampleForm.Email.$invalid">invalid email</p>
+
+<label for="phone">Phone #</label>
+<input type="text" id="phone" name="phone" class="form-control" ng-model="user.phone" numbers-only/>
+<br>
+
+<button type="submit" name="submitbutton" class="btn btn-primary" ng-click="submitForm(user)" ng-disabled="sampleForm.fullName.$pristine ||sampleForm.phone.$pristine ||sampleForm.Email.$pristine ||sampleForm.$invalid">Submit</button>
+
+
+<h5>{{ user.total }}</h5>
+
+</form>
+</div>
+<br>
+<div class="footer"></div>
+</section> 
